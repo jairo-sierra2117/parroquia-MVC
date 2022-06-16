@@ -21,6 +21,6 @@ public class Parroquia {
          Control c = new Control(f, v, l);
          
          c.iniciar();
-         c.actionPerformed(null);
+         
     }
 }

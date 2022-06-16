@@ -52,6 +52,8 @@ public class Control implements ActionListener {
         v.btnPagar.addActionListener(Control);
         System.out.println("recibiendo boton 7");
         v.btnTotalizar.addActionListener(Control);
+        System.out.println("recibiendo boton 8");
+        v.btnLimpiar.addActionListener(Control);
     }
 
     @Override
@@ -85,7 +87,7 @@ public class Control implements ActionListener {
         } else if (evento.getActionCommand().equals("Buscar")) {
             System.out.println("boton Buscar");
             v.areaResultados.setText(String.valueOf(l.mostrarDatosFeligres(ConsultaCC)));
-        } else if (evento.getActionCommand().equals("Eliminar")) {
+        } else if (evento.getActionCommand().equals("Limpiar")) {
             //se limpian los JTextfield
             v.txtCedula.setText("");
             v.txtNombre.setText("");
@@ -118,6 +120,9 @@ public class Control implements ActionListener {
             System.out.println("boton totalizar");
             v.areaResultados.setText(String.valueOf(l.totalizarDiezmo()));
 
+        } else if(evento.getActionCommand().equals("Eliminar")){
+            System.out.println("boton Eliminar");
+            l.eliminar(JOptionPane.showInputDialog("Digite la Cedula del feligres que desea eliminar"));
         }
     }
 

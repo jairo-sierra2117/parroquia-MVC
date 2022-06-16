@@ -46,6 +46,7 @@ public class Vista extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        btnLimpiar = new javax.swing.JButton();
         panel2 = new java.awt.Panel();
         jTextField3 = new javax.swing.JTextField();
         lblDCedula = new javax.swing.JLabel();
@@ -93,39 +94,46 @@ public class Vista extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField1.setText("Registro Feligrés");
 
+        btnLimpiar.setText("Limpiar");
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addComponent(btnGuardar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar))
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addComponent(btnActualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscar))
-                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCedula)
-                            .addComponent(lblNombre)
-                            .addComponent(lblDireccion)
-                            .addComponent(lblTelefono)
-                            .addComponent(lblEstrato)
-                            .addComponent(lblEstado))
-                        .addGap(30, 30, 30)
-                        .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtCedula)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                            .addComponent(txtDireccion)
-                            .addComponent(txtTelefono)
-                            .addComponent(txtEstrato)
-                            .addComponent(txtEstado))))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addComponent(btnGuardar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnEliminar))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addComponent(btnActualizar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnBuscar))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCedula)
+                                    .addComponent(lblNombre)
+                                    .addComponent(lblDireccion)
+                                    .addComponent(lblTelefono)
+                                    .addComponent(lblEstrato)
+                                    .addComponent(lblEstado))
+                                .addGap(30, 30, 30)
+                                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtCedula)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                    .addComponent(txtDireccion)
+                                    .addComponent(txtTelefono)
+                                    .addComponent(txtEstrato)
+                                    .addComponent(txtEstado)))))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(btnLimpiar)))
                 .addContainerGap(41, Short.MAX_VALUE))
-            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +174,9 @@ public class Vista extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizar)
                     .addComponent(btnBuscar))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnLimpiar)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         panel2.setBackground(new java.awt.Color(255, 153, 153));
@@ -350,6 +360,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JButton btnConsultar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnPagar;
     public javax.swing.JButton btnTotalizar;
     private javax.swing.JScrollBar jScrollBar2;

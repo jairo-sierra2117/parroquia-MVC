@@ -8,6 +8,7 @@ package Modelo;
 import Vista.Vista;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Jairo Sierra
@@ -15,7 +16,6 @@ import javax.swing.JOptionPane;
 public class Lista extends Feligres {
     // Feligres feligres = new Feligres();
 
-    
     ArrayList<Feligres> feligreses = new ArrayList<>();
 
     public Lista() {
@@ -40,9 +40,10 @@ public class Lista extends Feligres {
         String datos = "NO EXISTE";
 
         for (int i = 0; i < feligreses.size(); i++) {
-            if (feligreses.get(i).getCedula().equals(ConsultaCC)) 
-            datos = String.valueOf(feligreses.get(i));
-            
+            if (feligreses.get(i).getCedula().equals(ConsultaCC)) {
+                datos = String.valueOf(feligreses.get(i));
+            }
+
         }
         return datos;
     }
@@ -54,10 +55,10 @@ public class Lista extends Feligres {
                 if (feligreses.get(i).getEstado() == true) {
                     if (feligreses.get(i).getEstrato() == 1) {
                         Cdiezmo = 250000;
-                       
+
                     } else if (feligreses.get(i).getEstrato() == 2 || feligreses.get(i).getEstrato() == 3) {
                         Cdiezmo = 500000;
-                        
+
                     } else if (feligreses.get(i).getEstrato() > 3) {
                         Cdiezmo = 1000000;
                     }
@@ -68,27 +69,30 @@ public class Lista extends Feligres {
         }
         return Cdiezmo;
     }
-    
-    public String actualizar(String ccACT,String actCC,String actNombre,String actDireccion, String actTelefono,int actEstrato){
+
+    public String actualizar(String ccACT, String actCC, String actNombre, String actDireccion, String actTelefono, int actEstrato) {
         String datos = "prueba de actualizar datos fallida";
-        for(int i=0;i<feligreses.size();i++){
-            if(feligreses.get(i).getCedula().equals(ccACT)){
+        for (int i = 0; i < feligreses.size(); i++) {
+            if (feligreses.get(i).getCedula().equals(ccACT)) {
                 feligreses.get(i).setCedula(actCC);
                 feligreses.get(i).setNombre(actNombre);
                 feligreses.get(i).setDireccion(actDireccion);
                 feligreses.get(i).setTelefono(actTelefono);
                 feligreses.get(i).setEstrato(actEstrato);
                 datos = String.valueOf(feligreses.get(i));
-            }else
-                datos ="no existe";
-                
+            } else {
+                datos = "no existe";
+            }
+
         }
         return datos;
     }
-    public int totalizarDiezmo(){
-        int totalDiezmo=0;
-        for(int i=0; i<feligreses.size();i++)
-             totalDiezmo += feligreses.get(i).getValorDiezmo();
+
+    public int totalizarDiezmo() {
+        int totalDiezmo = 0;
+        for (int i = 0; i < feligreses.size(); i++) {
+            totalDiezmo += feligreses.get(i).getValorDiezmo();
+        }
         return totalDiezmo;
     }
 
@@ -109,8 +113,16 @@ public class Lista extends Feligres {
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Pagar\n*DIEZMO PAGADO*");
-                    
+
                 }
+            }
+        }
+    }
+
+    public void eliminar(String cc) {
+        for (int i = 0; i < feligreses.size(); i++) {
+            if (feligreses.get(i).getCedula().equals(cc)) {
+                feligreses.remove(i);
             }
         }
     }
